@@ -6,3 +6,5 @@ entre los integrantes del equipo
 
 
 Javier Ortiz
+Carlos Palma
+Annie Rojas
