@@ -11,8 +11,8 @@ public class ControladorPrincipal {
         return "index";
     }
     
-    @GetMapping("/canciones")
-    public String cargarListaCanciones() {
-        return "listacanciones";
+    @GetMapping("/generos")
+    public String cargarListaGeneros() {
+        return "listageneros";
     }
 }
