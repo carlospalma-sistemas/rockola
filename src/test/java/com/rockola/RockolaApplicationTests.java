@@ -15,22 +15,16 @@ class RockolaApplicationTests {
     private GeneroService servicio;
     
     @Test
-    @Disabled
+    @Disabled("Registro creado y probado")
     void verificarSiSeGuardaUnGeneroNuevo() {
         GeneroMusical g = new GeneroMusical("Salsa", "salsa", true);
-        GeneroMusical guardado = servicio.crearNuevoGenero(g);
-        Assertions.assertTrue(guardado != null, "ERROR, no se pudo guardar nuevo genero");
+        Assertions.assertDoesNotThrow(()-> {
+            servicio.crearNuevoGenero(g);
+        }, "No se pudo crear un nueva género");
     }
 
     @Test
-    @Disabled
     void verificarSiSeActualizaUnGenero() {
-        GeneroMusical g = new GeneroMusical("Cumbia", "cumbia", true);
-        GeneroMusical guardado = servicio.crearNuevoGenero(g);
-        guardado.setCarpeta("cumbiaspegaditas");
-        guardado.setHab(false);
-        GeneroMusical actualizado = servicio.actualizarGenero(guardado);
-        Assertions.assertTrue(actualizado.getCarpeta().equals("cumbiaspegaditas") , "ERROR, no se pudo actualizar genero");
-        Assertions.assertTrue(actualizado.isHab() == false , "ERROR, no se pudo actualizar genero");
+        
     }
 }
