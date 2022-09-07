@@ -33,7 +33,7 @@ public class GeneroService {
     }
     
     public GeneroMusical consultarGeneros(int id) {
-        GeneroMusical g = repo.findById(id).get();
+        GeneroMusical g = repo.findById(id).orElse(null);
         return g;
     }
     
